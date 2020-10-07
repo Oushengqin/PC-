@@ -61,19 +61,27 @@ pc调用show()方法
 四、核心方法
 
 这段代码主要是跟CPU中speed有关的代码，体现了类定义的属性，之中也使用到了this关键字和if判断语句等。
-
-private int speed;
-CPU(int speed,float type){
-        setSpeed(speed);
-        setType(type);
-public void setSpeed(int speed) {
-        if (speed >= 0 && speed <= 5000) {
-            this.speed = speed;
-        }else{
-            System.out.println("输入错误");
-        }
-cpu.setSpeed(2200);
-System.out.println("CPU速度:"+cpu.getSpeed());
+public class CPU {
+		private int speed;
+		String brand;
+		private double oc;
+		int getSpeed(){
+			return speed;
+		}
+		double getOc() {
+			return oc;
+		}
+		String getBrand() {
+			return brand;
+		}
+		public void setSpeed(int speed){
+			this.speed=speed;
+		}
+		public void setOc(double oc) {
+			if(oc>4.7&&oc<5.3)
+			this.oc=oc;
+		}
+}
 五、实验结果
 CPU品牌：Dell
 CPU速度：2200
